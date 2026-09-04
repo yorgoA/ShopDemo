@@ -35,7 +35,17 @@ npm run dev
 | Frontend | http://localhost:5173  |
 | Backend  | http://localhost:3000  |
 
-The SQLite database is created automatically at `database/shop.db` on first run and seeded with 10 demo products.
+The SQLite database is created automatically at `database/shop.db` on first run and seeded with 10 demo products. It's gitignored, so every clone starts from the same clean seed data.
+
+---
+
+## Testing
+
+The backend has an integration test suite (Node's built-in test runner + Supertest) covering auth, cart, checkout, and stock validation. It runs against a throwaway database, never the dev one:
+
+```bash
+npm test
+```
 
 ---
 
@@ -154,6 +164,9 @@ project-root/
 │   │   ├── orders.js
 │   │   ├── products.js
 │   │   └── profile.js
+│   ├── tests/
+│   │   └── api.test.js
+│   ├── app.js           ← builds the Express app (used by server.js and tests)
 │   ├── db.js
 │   ├── server.js
 │   └── package.json
