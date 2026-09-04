@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Runtime database (created automatically on first run - see README)
+database/*.db
+
+# Build output
+frontend/dist/
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Logs
+*.log
